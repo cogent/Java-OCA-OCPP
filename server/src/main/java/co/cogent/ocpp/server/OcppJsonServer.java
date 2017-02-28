@@ -94,6 +94,7 @@ public class OcppJsonServer {
         });
 
         server = new JSONServer(core);
+        System.out.println("Starting server...");
         server.open("localhost", 8887, new ServerEvents() {
 
             @Override
