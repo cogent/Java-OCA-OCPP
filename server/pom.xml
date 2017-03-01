@@ -91,7 +91,41 @@
                             <mainClass>co.cogent.ocpp.server.OcppJsonClient</mainClass>
                         </configuration>
                     </execution>
+                    <execution>
+                        <id>soapclient</id>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                        <configuration>
+                            <mainClass>co.cogent.ocpp.server.OcppSoapClient</mainClass>
+                        </configuration>
+                    </execution>
                 </executions>
+            </plugin>
+            <plugin>
+              <artifactId>maven-assembly-plugin</artifactId>
+              <version>2.3</version>
+              <configuration>
+                <descriptorRefs>
+                  <descriptorRef>jar-with-dependencies</descriptorRef>
+                </descriptorRefs>
+                <finalName>ocpp-server</finalName>
+                <appendAssemblyId>false</appendAssemblyId>
+                <archive>
+                  <manifest>
+                    <mainClass>co.cogent.ocpp.server.OcppSoapServer</mainClass>
+                  </manifest>
+                </archive>
+              </configuration>
+              <executions>
+                <execution>
+                  <id>build-jar-with-dependencies</id>
+                  <phase>package</phase>
+                  <goals>
+                    <goal>single</goal>
+                  </goals>
+                </execution>
+              </executions>
             </plugin>
         </plugins>
     </build>
