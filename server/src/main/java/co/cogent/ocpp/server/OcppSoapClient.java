@@ -114,7 +114,7 @@ public class OcppSoapClient {
                 System.out.println("Client Events: connection closed");
             }
         };
-        client.connect("http://localhost:5000", events);
+        client.connect("http://localhost:8887", events);
     }
 
     public void sendBootNotification() throws Exception {
